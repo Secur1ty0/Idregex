@@ -1,9 +1,11 @@
 # I_D_E
+
 Two small tool for Extract IP or domain name.
 
-![Follow on Twitter](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social)![GitHub last commit](https://img.shields.io/github/last-commit/SevenC-base/IP_domain_name_extraction_tool)![GitHub stars](https://img.shields.io/github/stars/SevenC-base/IP_domain_name_extraction_tool)
+![Follow on Twitter](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social)![](https://img.shields.io/github/forks/SevenC-base/IP_domain_name_extraction_tool)![GitHub stars](https://img.shields.io/github/stars/SevenC-base/IP_domain_name_extraction_tool)![](https://img.shields.io/github/followers/SevenC-base)![GitHub last commit](https://img.shields.io/github/last-commit/SevenC-base/IP_domain_name_extraction_tool) ![](https://img.shields.io/github/v/release/SevenC-base/IP_domain_name_extraction_tool?display_name=tag)
 
-## 1. Js + html
+
+## 1. html+js
 
 ![image-20220302104848841](https://gitee.com/JIFENGJIANHAO1/images/raw/master/image-20220302104848841.png)
 
@@ -36,9 +38,3 @@ python extract.py -f D:\\1.txt -a -p -D -t
 -p,--port             matching port,eg:127.0.0.1:1001
 -h, --help            display this help and exit
 ```
-
-### 2.2 Update
-
-- [I_D_E Version is 1.0] (2021/12/1)
-- Remove dirty data caused by web page suffix class [I_D_E Version is 1.1] (2022/02/28)
-- Perfect tool underline regular matching rules [I_D_E Version is 1.1] (2022/03/02)
