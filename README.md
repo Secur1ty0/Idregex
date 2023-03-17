@@ -1,4 +1,4 @@
-# I_D_E
+# Idregex
 
 Two small tools for extract IP or domain name.
 
