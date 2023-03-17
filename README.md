@@ -2,7 +2,7 @@
 
 Two small tools for extract IP or domain name.
 
-![Follow on Twitter](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social) ![](https://img.shields.io/github/forks/SevenC-base/IP_domain_name_extraction_tool) ![GitHub stars](https://img.shields.io/github/stars/SevenC-base/IP_domain_name_extraction_tool) ![](https://img.shields.io/github/followers/SevenC-base) ![GitHub last commit](https://img.shields.io/github/last-commit/SevenC-base/IP_domain_name_extraction_tool) ![](https://img.shields.io/github/v/release/SevenC-base/IP_domain_name_extraction_tool?display_name=tag)
+![Follow on Twitter](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social) ![](https://img.shields.io/github/forks/Secur1ty0/Idregex) ![GitHub stars](https://img.shields.io/github/stars/Secur1ty0/Idregex) ![](https://img.shields.io/github/followers/Secur1ty0) ![GitHub last commit](https://img.shields.io/github/last-commit/Secur1ty0/Idregex) ![](https://img.shields.io/github/v/release/Secur1ty0/Idregex?display_name=tag)
 
 
 ## 1. html+js
