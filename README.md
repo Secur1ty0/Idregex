@@ -6,6 +6,21 @@
 
 ![image-20220302104848841](./img1.png)
 
+**更新日志** 2023-03-22
+
+- 增加路径以及参数的匹配
+- 新增17种协议头识别：`(file,ftp,gopher,glob,expect,mailto,mms,ed2k,flashget,thunder,news,php,bzip2,data,Zlib,ssh2,zip)`。
+- 新增主域名匹配可识别国内常见主域名，可识别常见27个二级域名。
+- 优化JS判断流程
+
+**Todo**
+
+- Ajax 请求解析域名对应站点百度权重、工商信息
+
+- IP提取增加：匹配协议头、端口、路径以及参数
+
+  
+
 ## 2. Py scripts
 
 特点:
