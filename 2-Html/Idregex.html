@@ -16,6 +16,15 @@
 	<link rel="stylesheet" href="./js/bootstrap.min.css" />
 
 	<script src="./js/calculateipdn.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="./js/style.css">
+	<script src="./js/cute-alert.js"></script>
+		<script>
+			window.alert = alert;
+			function alert(mes){
+				cuteAlert({type:"info", title: "提示！",message:mes,});
+			};
+		</script>
+
 
 	<style>
 		html,
@@ -93,20 +102,24 @@
 		<img src="./js/159996913758530.png" alt="" style="height: 30px;" />
 
 		<span class="" style="margin-left: 1%;">
-			<button class="btn btn-primary" onclick="getIp()">IP提取</button>
-			<input type="checkbox" id="check1" >去重
+			<button class="btn btn-primary" onclick="getIp2()">IP提取</button>
+			<input type="checkbox" id="check11" ><label for="check11">匹配协议头</label>
+			<input type="checkbox" id="check12" ><label for="check12">端口</label>
+			<input type="checkbox" id="check13" ><label for="check13">路径及参数</label>
+			<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<input type="checkbox" id="check14"><label for="check14">补全http(s)://</label>
+			<input type="checkbox" id="check1" ><label for="check1">去重</label>
 		</span>
 		<span>
 
 			<button class="btn btn-primary" style="margin-left: 5%;" onclick="matchResult()">域名提取</button>
-			<input type="checkbox" id="check21">匹配协议头
-
-			<input type="checkbox" id="check22">端口
-			<input type="checkbox" id="check23">路径及参数
+			<input type="checkbox" id="check21"><label for="check21">匹配协议头</label>
+			<input type="checkbox" id="check22"><label for="check22">端口</label>
+			<input type="checkbox" id="check23"><label for="check23">路径及参数</label>
 			<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			<input type="checkbox" id="check26">补全http(s)://
-			<input type="checkbox" id="check25">去重
-			<input type="checkbox" id="check24">主域名匹配(注意只能和去重使用)
+			<input type="checkbox" id="check26"><label for="check26">补全http(s)://</label>
+			<input type="checkbox" id="check25"><label for="check25">去重</label>
+			<input type="checkbox" id="check24"><label for="check24">主域名匹配(注意只能和去重使用)</label>
 
 		</span>
 	</div>
