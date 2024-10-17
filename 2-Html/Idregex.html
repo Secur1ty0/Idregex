@@ -106,8 +106,8 @@
 
 	<body>
 		<div style='margin-top: 0px; margin-left:1%; margin-bottom: 5px; height: 20px; margin-top: 1%;z-index: 2;'>
-			<a style="font-size: 30px; font-weight: 300;">IP域名提取工具</a>
-			<img src="./js/159996913758530.png" alt="" style="height: 30px;" />
+<!-- 			<a style="font-size: 30px; font-weight: 300;">IP域名提取工具</a>
+			<img src="./js/159996913758530.png" alt="" style="height: 30px;" /> -->
 
 			<span class="" style="margin-left: 1%;">
 				<button class="btn btn-primary" onclick="getIp2()">IP提取</button>
@@ -129,9 +129,9 @@
 				<input type="checkbox" id="check25"><label for="check25">去重</label>
 				<input type="checkbox" id="check24"><label for="check24">主域名匹配(注意只能和去重使用)</label>
 				<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-				<button class="btn btn-primary" onclick="geticp('https://icp.chinaz.com/')">icp公司获取</button>
+				<button class="btn btn-secondary" onclick="alert('功能已失效')">icp公司获取</button>
 				<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-				<button class="btn btn-primary" onclick="create_grammar()">搜索引擎语法生成</button>
+				<button class="btn btn-primary" onclick="create_grammar()">语法生成</button>
 			</span>
 
 			<div class="textarea-container">
@@ -146,7 +146,7 @@
 					<textarea id="text3" placeholder="域名提取结果" this.style.color='black' ; this.focus();
 						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
 						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:300px;width: 33%;"></textarea>
-					<textarea id="text4" placeholder="icp提取结果" this.style.color='black' ; this.focus();
+					<textarea id="text4" placeholder="icp公司名称提取结果" this.style.color='black' ; this.focus();
 						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
 						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:300px;width: 33%;"></textarea>
 					<textarea id="text5" placeholder="备案号输入" this.style.color='black' ; this.focus();
