@@ -1,10 +1,16 @@
 # Idregex
 
-两个IP域名提取小工具，一个网页版，一个Python脚本版。
+IP域名提取小工具，网页版
 
-## 1. html+js
+1. html+js
 
 ![image-20220302104848841](./img1.png)
+
+**更新日志** 2025-06-14
+
+- 优化搜索引擎生成语法生成，增加去重、域名结果的IP排除
+- 增加路径匹配以及域名匹配的脏数据处理，优化匹配方式
+- 界面展示优化
 
 **更新日志** 2024-10-17
 
@@ -46,7 +52,7 @@
 python extract.py -f D:\\1.txt -a -p -D -t
 ```
 
-**注意：**提取的结果是保存在当前目录中，result.csv。
+**注意：** 提取的结果是保存在当前目录中，result.csv。
 
 ```shell
 -f, --file            only set one file to be extracted

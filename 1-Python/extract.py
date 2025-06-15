@@ -7,12 +7,11 @@
 import os
 import sys
 import threading
-import time
 import re
 import getopt
 import pandas as pd
 
-banner = """  ______      _                  _   _               _____         _____        
+banner = r"""  ______      _                  _   _               _____         _____        
  |  ____|    | |                | | (_)             |_   _|       |  __ \       
  | |__  __  _| |_ _ __ __ _  ___| |_ _  ___  _ __     | |  _ __   | |  | |_ __  
  |  __| \ \/ / __| '__/ _` |/ __| __| |/ _ \| '_ \    | | | '_ \  | |  | | '_ \ 
@@ -24,7 +23,7 @@ banner = """  ______      _                  _   _               _____         _
 help = """
 ☀☀☀ IP域名提取工具 [Version is 1.0] ☀☀☀
 
-Usage:python extract.py -f D:\\1.txt -a -p -D -t
+Usage:python extract.py -f D:\\\\1.txt -a -p -D -t
 
 Attention:
 The extraction results are saved in the current directory.
