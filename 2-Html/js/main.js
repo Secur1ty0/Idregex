@@ -1,10 +1,11 @@
-let currentMode = "ip";
+let currentMode = "ip"; 
 /**
  * 设置当前提取模式（IP或域名），并根据模式显示/隐藏主域名匹配选项
  */
 function setMode(mode) {
     currentMode = mode;
     if (mode === "domain") {
+        
         document.getElementById("check-root").style.display = mode === "domain" ? "inline" : "none";
     }
 }
@@ -55,42 +56,53 @@ function matchResult() {
     const withAddHttps = document.getElementById("check-http").checked;
     const regIsIP = /\d{1,3}(\.\d{1,3}){3}/;
     const regEndsWithDash = /-$/;
-    const regEndsWithFile = /\.(xml|xhtml|html?|asp(x)?|jsp|php|jsf)$/i;
-    const regPath = /\/\S+/;
-    const fileExtBlacklist = /\.(json|js|css|png|jpg|jpeg|gif|svg|ico|bmp|webp|mp4|avi|mov|wmv|flv|mp3|wav|ogg|zip|rar|7z|tar|gz|pdf|docx?|xlsx?|pptx?|txt|csv|xml)$/i;
+    const regEndsWithFile = /\.(json|js|css|jpg|jpeg|png|gif|bmp|ico|svg|ttf|woff|woff2|eot|mp3|mp4|avi|flv|swf|doc|docx|xls|xlsx|ppt|pptx|pdf|txt|md|xml|xhtml|htm(l)?|asp(x)?|jsp(x)?|php|jsf)$/i;
     while ((match = regex.exec(rawText)) !== null) {
         let result = match[0];
+        
         if (flag === 0) {
+            
             if (regIsIP.test(result)) continue;
             if (regEndsWithDash.test(result)) continue;
+            
             if (regEndsWithFile.test(result)) continue;
-            if (fileExtBlacklist.test(result)) continue;
+            
+            
             const hostname = result.replace(/^https?:\/\//, "");
+            
             const parts = hostname.split(".");
             if (parts.length < 2) continue;
+            
             const suffix2 = "." + parts.slice(-2).join(".");
             const suffix3 = "." + parts.slice(-3).join(".");
+            
             const specialSuffixRe = /.*\.(com|org|net|gov|edu|idv|club|game|tech|info|xyz|me|biz|ac|co|mil|公司|网络|政务)\.(tw|cn|hk|mo|au|pe|za|bw|jp|uk|us|com)$/i;
+            
             if (specialSuffixRe.test(suffix3)) {
                 matches.push(suffix3.split(".").slice(-3).join("."));
             } else {
                 matches.push(suffix2.split(".").slice(-2).join("."));
             }
+            
         } else {
-            if (![3, 7].includes(flag) && fileExtBlacklist.test(result)) continue;
-            if ([4, 5, 6].includes(flag) && (regEndsWithDash.test(result) || regEndsWithFile.test(result))) continue;
-            if (flag === 7) {
-                const pathMatch = regPath.exec(result);
-                if (pathMatch) matches.push(pathMatch[0]);
-            } else {
+            
+            
+            
+            if (![1, 3, 7].includes(flag) && regEndsWithFile.test(result)) {
+                continue;
+            }
+            
+            else if ([4, 5, 6].includes(flag) && (regEndsWithDash.test(result) || regEndsWithFile.test(result))) {
+                continue;
+            }else{
                 matches.push(result);
+                
             }
         }
     }
     let output = matches;
     if (withUnique) output = unique(output);
     if (withAddHttps) output = withUnique ? uniquehttps(output) : nonuniquehttps(output);
-    console.log("输出结果:", output);
     $("#text3").val(output.join("\n"));
 }
 /**
@@ -103,19 +115,19 @@ function create_grammar() {
     let result = "", result1 = "", res4 = "", res41 = "", res5 = "", res51 = "";
     if (text3Value && text3Value !== "域名提取结果") {
         const lines = unique(text3Value.split("\n"));
-        const regIsIP = /^\d{1,3}(\.\d{1,3}){3}$/;
+        const regIsIP = /^\d{1,3}(\.\d{1,3}){3}$/; 
         for (const line of lines) {
-            if (!line || regIsIP.test(line.trim())) continue;
+            if (!line || regIsIP.test(line.trim())) continue; 
             result += `domain = "${line}" || cert = "${line}" || `;
             result1 += `domain.suffix = "${line}" || cert.subject = "${line}" || `;
         }
-        result = result.slice(0, -4);
+        result = result.slice(0, -4);   
         result1 = result1.slice(0, -4);
     }
     if (text4Value && text4Value !== "icp提取结果") {
         const lines4 = unique(text4Value.split("\n"));
         for (const line of lines4) {
-            if (!line || line.trim() === "") continue;
+            if (!line || line.trim() === "") continue; 
             res4 += `cert = "${line}" || `;
             res41 += `icp.name = "${line}" || cert.subject = "${line}" || `;
         }
@@ -125,7 +137,7 @@ function create_grammar() {
     if (text5Value && text5Value !== "备案号输入") {
         const lines5 = unique(text5Value.split("\n"));
         for (const line of lines5) {
-            if (!line || line.trim() === "") continue;
+            if (!line || line.trim() === "") continue; 
             res5 += `icp = "${line}" || `;
             res51 += `icp.number = "${line}" || `;
         }
@@ -141,7 +153,7 @@ function create_grammar() {
     if (res41) arr7.push(res41);
     if (res51) arr7.push(res51);
     const syntaxArea = document.getElementById("syntax-area");
-    syntaxArea.style.display = "flex";
+    syntaxArea.style.display = "flex"; 
     if (arr6.length === 0 && arr7.length === 0) {
         alert("生成失败：无有效数据用于生成语法表达式");
         document.getElementById("text6").value = "";
@@ -161,8 +173,10 @@ async function copyText(id, btn) {
     const textarea = document.getElementById(id);
     const text = textarea.value;
     try {
+        
         await navigator.clipboard.writeText(text);
     } catch (err) {
+        
         textarea.select();
         const success = document.execCommand('copy');
         if (!success) {
@@ -195,7 +209,7 @@ function clearAll() {
         'check-path',
         'check-http',
         'check-uniq',
-        'check-rootdomain'
+        'check-rootdomain' 
     ];
     checkboxes.forEach(id => {
         const checkbox = document.getElementById(id);
